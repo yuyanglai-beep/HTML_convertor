@@ -6,6 +6,12 @@ echo   強制重裝與修復工具 (Python 3.12 版)
 echo ===================================================
 echo.
 
+echo [0/4] 強制結束所有 Python 程序 (釋放檔案鎖定)...
+taskkill /F /IM python.exe /T >nul 2>&1
+REM 這裡可能會顯示錯誤如果沒有執行中的 python，這是正常的，所以我們隱藏輸出
+
+timeout /t 2 /nobreak >nul
+
 echo [1/4] 清除舊的虛擬環境 (刪除 .venv)...
 if exist ".venv" (
     rd /s /q ".venv"
