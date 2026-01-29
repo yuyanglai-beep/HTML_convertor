@@ -1,45 +1,77 @@
 @echo off
-REM Word 轉 HTML 工具快速啟動腳本 (Windows)
-REM 此腳本會同時啟動後端和前端服務
+setlocal
+cd /d "%~dp0"
 
-echo ========================================
-echo   Word 轉 HTML 工具啟動中...
-echo ========================================
-echo.
+echo ===================================================
+echo   Word 轉 HTML 工具 - 自動安裝與啟動腳本 (v2)
+echo ===================================================
 
-REM 檢查是否在正確的目錄
-if not exist "backend\app.py" (
-    echo [錯誤] 請在專案根目錄執行此腳本
+REM 1. 檢查 Python 是否存在
+python --version >nul 2>&1
+if %errorlevel% neq 0 (
+    echo [錯誤] 找不到 Python! 請先安裝 Python，並記得勾選 "Add Python to PATH"。
     pause
     exit /b 1
 )
 
-echo [0/2] 正在檢查並安裝必要的程式庫 (第一次會比較久)...
-echo 安裝後端套件...
-pip install -r backend\requirements.txt
-echo 安裝前端套件...
-pip install -r frontend\requirements.txt
+REM 2. 建立虛擬環境 (如果不存在)
+if not exist ".venv" (
+    echo [1/3] 正在建立虛擬環境 (這會確保你的電腦乾淨)...
+    python -m venv .venv
+    if %errorlevel% neq 0 (
+        echo [錯誤] 建立虛擬環境失敗。
+        pause
+        exit /b 1
+    )
+)
+
+REM 3. 啟用虛擬環境並安裝套件
+echo [2/3] 正在檢查與安裝套件...
+call .venv\Scripts\activate
+
+REM 升級 pip
+python -m pip install --upgrade pip >nul 2>&1
+
+REM 安裝後端
+echo     - 安裝後端需求...
+python -m pip install -r backend\requirements.txt >nul
+if %errorlevel% neq 0 (
+    echo [錯誤] 後端套件安裝失敗！
+    pause
+    exit /b 1
+)
+
+REM 安裝前端
+echo     - 安裝前端需求...
+python -m pip install -r frontend\requirements.txt >nul
+if %errorlevel% neq 0 (
+    echo [錯誤] 前端套件安裝失敗！
+    pause
+    exit /b 1
+)
+
+echo [完成] 所有套件安裝完畢。
 echo.
 
-REM 啟動後端 (在新視窗)
-echo [1/2] 啟動後端服務 (Port 8000)...
-start "Backend" cmd /k "cd backend && python app.py"
-
-REM 等待後端啟動
-timeout /t 3 /nobreak > nul
-
-REM 啟動前端 (在新視窗)
-echo [2/2] 啟動前端服務 (Port 7860)...
-start "Frontend" cmd /k "cd frontend && python app.py"
-
+REM 4. 啟動服務
+echo [3/3] 啟動服務中...
 echo.
-echo ========================================
-echo   啟動完成!
-echo ========================================
+
+REM 啟動後端 (使用虛擬環境)
+start "Backend API" cmd /k "call .venv\Scripts\activate && cd backend && python app.py"
+
+REM 等待後端初始化
+timeout /t 3 /nobreak >nul
+
+REM 啟動前端 (使用虛擬環境)
+start "Frontend UI" cmd /k "call .venv\Scripts\activate && cd frontend && python app.py"
+
+echo ===================================================
+echo   服務已在新的視窗中啟動!
 echo.
-echo 後端 API: http://localhost:8000
-echo 前端介面: http://localhost:7860
-echo API 文件: http://localhost:8000/docs
+echo   - 後端: http://localhost:8000
+echo   - 前端: http://localhost:7860
 echo.
-echo 按任意鍵關閉此視窗...
-pause > nul
+echo   您可以縮小此視窗 (請勿關閉新跳出的視窗)
+echo ===================================================
+pause
