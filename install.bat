@@ -2,22 +2,22 @@
 chcp 65001 >nul
 cd /d "%~dp0"
 echo ===================================================
-echo   強制重裝與修復工具 (Python 3.12 版)
+echo   環境安裝與重置工具 (Python 3.12)
 echo ===================================================
 echo.
 
-echo [0/4] 強制結束所有 Python 程序 (釋放檔案鎖定)...
+echo [0/4] 清理執行中的程序...
 taskkill /F /IM python.exe /T >nul 2>&1
 REM 這裡可能會顯示錯誤如果沒有執行中的 python，這是正常的，所以我們隱藏輸出
 
-timeout /t 2 /nobreak >nul
+timeout /t 1 /nobreak >nul
 
-echo [1/4] 清除舊的虛擬環境 (刪除 .venv)...
+echo [1/4] 清除舊環境 (如果有的話)...
 if exist ".venv" (
     rd /s /q ".venv"
-    echo     - 舊環境已刪除
+    echo     - 已移除舊環境
 ) else (
-    echo     - 未發現舊環境，略過
+    echo     - 無舊環境，準備全新安裝
 )
 
 echo.

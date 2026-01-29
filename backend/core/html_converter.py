@@ -14,7 +14,7 @@ from .word_processor import (
     extract_embed_url,
     convert_url_to_iframe
 )
-from ..templates.footers import CATEGORY_TO_FOOTER_HTML
+from templates.footers import CATEGORY_TO_FOOTER_HTML
 
 
 def apply_auto_toc_and_smooth(html_list):
