@@ -355,7 +355,7 @@ span[data-testid="block-info"] {
 # Gradio 介面
 # ==========================================
 
-with gr.Blocks(theme=theme, css=css, title="Word 轉 HTML 工具") as demo:
+with gr.Blocks(title="Word 轉 HTML 工具") as demo:
 
     with gr.Row():
         with gr.Column():
@@ -461,7 +461,7 @@ with gr.Blocks(theme=theme, css=css, title="Word 轉 HTML 工具") as demo:
                     h1_output = gr.Textbox(
                         label="🔖主標題(H1)",
                         interactive=False,
-                        show_copy_button=True
+                        # show_copy_button=True (Gradio 4+ deprecated for Textbox in some versions, default is usually ok or use copy component)
                     )
 
                     with gr.Tabs():
@@ -536,4 +536,11 @@ with gr.Blocks(theme=theme, css=css, title="Word 轉 HTML 工具") as demo:
 if __name__ == "__main__":
     os.environ["GRADIO_ANALYTICS_ENABLED"] = "False"
     print(f"🔗 連接到後端 API: {BACKEND_URL}")
-    demo.launch(show_error=True, ssr_mode=False)
+    demo.launch(
+        show_error=True, 
+        ssr_mode=False,
+        server_name="0.0.0.0",
+        server_port=7860,
+        theme=theme,
+        css=css
+    )
