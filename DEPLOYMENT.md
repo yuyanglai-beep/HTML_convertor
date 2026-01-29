@@ -13,7 +13,7 @@
 1. 登入 [GitHub](https://github.com)
 2. 點擊右上角的 `+` → `New repository`
 3. 填寫儲存庫資訊:
-   - **Repository name**: `html-convertor` (或你喜歡的名稱)
+   - **Repository name**: `HTML_convertor` (或你喜歡的名稱)
    - **Description**: `i-Buzz Editor - Word 轉 HTML 工具`
    - **Visibility**: 選擇 Public 或 Private
    - **不要**勾選 "Initialize this repository with a README"
@@ -28,7 +28,7 @@
 cd c:\Users\yuyan\.gemini\antigravity\playground\photonic-filament
 
 # 添加遠端儲存庫 (替換成你的 GitHub URL)
-git remote add origin https://github.com/your-username/html-convertor.git
+git remote add origin https://github.com/your-username/HTML_convertor.git
 
 # 推送程式碼到 GitHub
 git branch -M main
@@ -216,7 +216,7 @@ heroku logs --tail -a ibuzz-frontend
 如遇到問題:
 
 1. 查看 [README.md](../README.md) 的完整文件
-2. 在 GitHub 提交 [Issue](https://github.com/your-username/html-convertor/issues)
+2. 在 GitHub 提交 [Issue](https://github.com/your-username/HTML_convertor/issues)
 3. 聯絡開發團隊
 
 ---

@@ -10,7 +10,7 @@
 2. **修改儲存庫名稱**
 
    - 在頁面最上方找到 **Repository name** 欄位
-   - 將名稱從 `ibuzz-editor` 改為 `html-convertor`
+   - 將名稱從 `ibuzz-editor` 改為 `HTML_convertor`
    - 點擊 **Rename** 按鈕
 
 3. **確認重新命名**
@@ -29,7 +29,7 @@
 
 ```bash
 cd c:\Users\yuyan\.gemini\antigravity\playground\photonic-filament
-git remote set-url origin https://github.com/yuyanglai-beep/html-convertor.git
+git remote set-url origin https://github.com/yuyanglai-beep/HTML_convertor.git
 ```
 
 ### 驗證更新
@@ -43,8 +43,8 @@ git remote -v
 應該會顯示:
 
 ```
-origin  https://github.com/yuyanglai-beep/html-convertor.git (fetch)
-origin  https://github.com/yuyanglai-beep/html-convertor.git (push)
+origin  https://github.com/yuyanglai-beep/HTML_convertor.git (fetch)
+origin  https://github.com/yuyanglai-beep/HTML_convertor.git (push)
 ```
 
 ---
@@ -64,7 +64,7 @@ git push origin main
 ## ⚠️ 注意事項
 
 1. **舊連結會自動重新導向**
-   - GitHub 會自動將 `ibuzz-editor` 重新導向到 `html-convertor`
+   - GitHub 會自動將 `ibuzz-editor` 重新導向到 `HTML_convertor`
    - 但建議更新所有文件中的連結
 
 2. **其他協作者**
