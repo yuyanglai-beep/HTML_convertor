@@ -4,7 +4,7 @@
 
 點擊以下連結,會自動填好所有欄位:
 
-👉 **[點我建立儲存庫](https://github.com/new?name=ibuzz-editor&description=i-Buzz+Editor+-+專業的+Word+轉+HTML+工具+(前後端分離架構)&visibility=public)**
+👉 **[點我建立儲存庫](https://github.com/new?name=html-convertor&description=Word+轉+HTML+工具&visibility=public)**
 
 在開啟的頁面中:
 
@@ -21,7 +21,7 @@
 URL 格式會像這樣:
 
 ```
-https://github.com/你的使用者名稱/ibuzz-editor.git
+https://github.com/你的使用者名稱/html-convertor.git
 ```
 
 **請複製這個 URL!**
@@ -39,7 +39,7 @@ https://github.com/你的使用者名稱/ibuzz-editor.git
 cd c:\Users\yuyan\.gemini\antigravity\playground\photonic-filament
 
 # 添加遠端儲存庫 (請替換成你的 URL)
-git remote add origin https://github.com/你的使用者名稱/ibuzz-editor.git
+git remote add origin https://github.com/你的使用者名稱/html-convertor.git
 
 # 重新命名分支為 main
 git branch -M main
@@ -55,7 +55,7 @@ git push -u origin main
 例如,如果你的使用者名稱是 `yuyan123`,請告訴我,我會自動執行:
 
 ```
-git remote add origin https://github.com/yuyan123/ibuzz-editor.git
+git remote add origin https://github.com/yuyan123/html-convertor.git
 git push -u origin main
 ```
 
@@ -100,7 +100,7 @@ git push -u origin main
 
 ```powershell
 git remote remove origin
-git remote add origin https://github.com/你的使用者名稱/ibuzz-editor.git
+git remote add origin https://github.com/你的使用者名稱/html-convertor.git
 ```
 
 ### Q: 推送失敗?
