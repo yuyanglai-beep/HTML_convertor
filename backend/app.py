@@ -15,7 +15,7 @@ from core.image_processor import process_image
 
 # 建立 FastAPI 應用
 app = FastAPI(
-    title="i-Buzz Editor API",
+    title="Word 轉 HTML API",
     description="Word 轉 HTML 和圖片處理 API",
     version="1.0.0"
 )
@@ -34,7 +34,7 @@ app.add_middleware(
 async def root():
     """根路徑"""
     return {
-        "message": "i-Buzz Editor API",
+        "message": "Word 轉 HTML API",
         "version": "1.0.0",
         "endpoints": {
             "health": "/health",

@@ -1,8 +1,8 @@
-# i-Buzz Editor 文章轉換器
+# Word 轉 HTML 工具
 
 <div align="center">
 
-![i-Buzz Editor](https://img.shields.io/badge/i--Buzz-Editor-blue?style=for-the-badge)
+![Word to HTML](https://img.shields.io/badge/Word-to--HTML-blue?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.8+-green?style=for-the-badge&logo=python)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688?style=for-the-badge&logo=fastapi)
 ![Gradio](https://img.shields.io/badge/Gradio-4.16-orange?style=for-the-badge)
@@ -17,7 +17,7 @@
 
 ## 📖 專案簡介
 
-i-Buzz Editor 是一個前後端分離的 Web 應用程式,專為內容編輯團隊設計,能夠:
+這是一個前後端分離的 Web 應用程式,專為內容編輯團隊設計,能夠:
 
 - 🔄 **自動轉換** Word 文件為符合官網規範的 HTML
 - 🎯 **智慧嵌入** Instagram、Threads、Facebook、YouTube 等社群媒體內容
@@ -326,6 +326,6 @@ CATEGORY_TO_FOOTER_HTML = {
 
 <div align="center">
 
-**Made with ❤️ by i-Buzz Team**
+**開源專案 · 歡迎貢獻**
 
 </div>

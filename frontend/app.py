@@ -1,5 +1,5 @@
 """
-i-Buzz Editor 前端應用 (Gradio)
+Word 轉 HTML 工具前端應用 (Gradio)
 透過呼叫後端 API 提供 Word 轉 HTML 和圖片處理功能
 """
 
@@ -355,11 +355,11 @@ span[data-testid="block-info"] {
 # Gradio 介面
 # ==========================================
 
-with gr.Blocks(theme=theme, css=css, title="i-Buzz Editor 文章轉換器") as demo:
+with gr.Blocks(theme=theme, css=css, title="Word 轉 HTML 工具") as demo:
 
     with gr.Row():
         with gr.Column():
-            gr.Markdown("## 🐝 i-Buzz Editor 文章轉換器")
+            gr.Markdown("## 📝 Word 轉 HTML 工具")
 
             with gr.Accordion("📘 操作說明(點擊展開)", open=False):
                 gr.HTML("""
@@ -373,7 +373,7 @@ with gr.Blocks(theme=theme, css=css, title="i-Buzz Editor 文章轉換器") as d
                     <li><strong>支援智慧判斷</strong>(例如 IG Reel、圖片帖、FB 影片等會自動調整嵌入高度)</li>
                     <li><strong>Word 表格 → 完整 HTML 表格</strong>(邊框、粗體、自動排版)</li>
                     <li><strong>圖片壓縮＋調整尺寸</strong>(第二個分頁可一次處理)</li>
-                    <li><strong>自動加上 Footer CTA</strong>(依分類套用 i-Buzz / AsiaKOL / FansFeed / Threads…)</li>
+                    <li><strong>自動加上 Footer CTA</strong>(依分類套用不同的 Footer 樣式)</li>
                   </ul>
 
                   <br>

@@ -1,9 +1,9 @@
 #!/bin/bash
-# i-Buzz Editor 快速啟動腳本 (Linux/Mac)
+# Word 轉 HTML 工具快速啟動腳本 (Linux/Mac)
 # 此腳本會同時啟動後端和前端服務
 
 echo "========================================"
-echo "  i-Buzz Editor 啟動中..."
+echo "  Word 轉 HTML 工具啟動中..."
 echo "========================================"
 echo ""
 

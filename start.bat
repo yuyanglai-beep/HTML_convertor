@@ -1,9 +1,9 @@
 @echo off
-REM i-Buzz Editor 快速啟動腳本 (Windows)
+REM Word 轉 HTML 工具快速啟動腳本 (Windows)
 REM 此腳本會同時啟動後端和前端服務
 
 echo ========================================
-echo   i-Buzz Editor 啟動中...
+echo   Word 轉 HTML 工具啟動中...
 echo ========================================
 echo.
 
@@ -16,14 +16,14 @@ if not exist "backend\app.py" (
 
 REM 啟動後端 (在新視窗)
 echo [1/2] 啟動後端服務 (Port 8000)...
-start "i-Buzz Backend" cmd /k "cd backend && python app.py"
+start "Backend" cmd /k "cd backend && python app.py"
 
 REM 等待後端啟動
 timeout /t 3 /nobreak > nul
 
 REM 啟動前端 (在新視窗)
 echo [2/2] 啟動前端服務 (Port 7860)...
-start "i-Buzz Frontend" cmd /k "cd frontend && python app.py"
+start "Frontend" cmd /k "cd frontend && python app.py"
 
 echo.
 echo ========================================
