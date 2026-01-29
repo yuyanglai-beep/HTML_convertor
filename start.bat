@@ -14,6 +14,13 @@ if not exist "backend\app.py" (
     exit /b 1
 )
 
+echo [0/2] 正在檢查並安裝必要的程式庫 (第一次會比較久)...
+echo 安裝後端套件...
+pip install -r backend\requirements.txt
+echo 安裝前端套件...
+pip install -r frontend\requirements.txt
+echo.
+
 REM 啟動後端 (在新視窗)
 echo [1/2] 啟動後端服務 (Port 8000)...
 start "Backend" cmd /k "cd backend && python app.py"

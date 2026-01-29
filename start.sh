@@ -13,6 +13,13 @@ if [ ! -f "backend/app.py" ]; then
     exit 1
 fi
 
+echo "[0/2] 正在檢查並安裝必要的程式庫 (第一次會比較久)..."
+echo "安裝後端套件..."
+pip install -r backend/requirements.txt
+echo "安裝前端套件..."
+pip install -r frontend/requirements.txt
+echo ""
+
 # 啟動後端
 echo "[1/2] 啟動後端服務 (Port 8000)..."
 cd backend
