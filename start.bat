@@ -7,13 +7,9 @@ echo   Word 轉 HTML 工具 - 啟動器
 echo ===================================================
 echo.
 
-if not exist ".venv" (
-    echo [警告] 尚未發現虛擬環境，可能尚未執行修復。
-    echo 請先執行 FORCE_REINSTALL.bat
-    echo.
-    echo 按任意鍵繼續嘗試啟動...
-    pause >nul
-)
+REM 移除虛擬環境硬性檢查，交由子腳本處理
+echo [檢查] 準備啟動相關服務 (後端 + 前端)
+echo.
 
 echo [1/2] 正在啟動後端視窗...
 start "WordToHTML_Backend" cmd /c "start_backend.bat"

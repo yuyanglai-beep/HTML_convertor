@@ -6,14 +6,14 @@ title Word to HTML - Backend Server
 echo [啟動中] 正在啟動後端伺服器...
 echo.
 
-if not exist ".venv" (
-    echo [錯誤] 找不到虛擬環境 (.venv)
-    echo 請先執行 FORCE_REINSTALL.bat
-    pause
-    exit /b 1
-)
+echo 目前工作目錄: %cd%
 
-call .venv\Scripts\activate
+REM 直接嘗試啟用虛擬環境
+if exist ".venv\Scripts\activate.bat" (
+    call .venv\Scripts\activate
+) else (
+    echo [警告] 找不到 .venv\Scripts\activate.bat，嘗試直接執行...
+)
 cd backend
 
 echo [執行] python app.py
