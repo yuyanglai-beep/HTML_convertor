@@ -1,5 +1,9 @@
 # Word 轉 HTML 工具
 
+> 專為 Word 文件轉換 HTML 設計的工具，支援一鍵轉換、圖片處理與自動套用 Footer
+> 
+> 📅 最後更新：2026-01-30
+
 <div align="center">
 
 ![Word to HTML](https://img.shields.io/badge/Word-to--HTML-blue?style=for-the-badge)
